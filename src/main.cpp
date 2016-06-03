@@ -65,7 +65,6 @@ Mat laplacian_exec(Mat& src, vector<TiVar*>& params){
 	int ksize    = params[0]->atInt();
 	double scale = params[1]->atDbl();
 	double delta = params[2]->atDbl();
-cout << ksize << endl;
 	Laplacian( src, dst, CV_16S, ksize, scale, delta, BORDER_DEFAULT );
 	return dst;
 }
@@ -125,6 +124,8 @@ void resize_init(vector<TiVar*>& params, TiObj& data){
 }
 
 Mat resize_exec(Mat& src, vector<TiVar*>& params){
+
+
 	Mat dst;
 	int sizeX = params[0]->atInt();
 	int sizeY = params[1]->atInt();
